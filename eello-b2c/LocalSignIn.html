@@ -72,7 +72,7 @@
                             <h2>Or, don't have an account?</h2>
                         </div>
                         <div class="create">
-                            <a id="createAccount" href="./LocalSignUp.html">Sign up now</a>
+                            <a style="display: flex; flex-flow: row; justify-content: center;" id="createAccount" href="./LocalSignUp.html">Sign up now</a>
                         </div>
                     </form>
                 </div>
@@ -166,7 +166,10 @@
 
                 form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
 
-                form.querySelector('#createAccount').classList.add('btn', 'btn-dark', 'my-5')
+                const createAccountLink = form.querySelector('#createAccount');
+                if(createAccountLink) {
+                    createAccountLink.classList.add('btn', 'btn-dark', 'my-5')
+                }
             }
             makeCopyrightText()
         }
