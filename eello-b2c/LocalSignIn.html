@@ -132,21 +132,8 @@
         }
 
         function styleErrorElement(element) {
-
-            const messageElement = (message) => {
-                const body = document.createElement('div')
-                body.classList.add('message-body')
-                body.innerText = message
-                return body
-            }
-
             if (element) {
                 element.classList.add('alert', 'alert-danger')
-                const messageBody = element.querySelector('div')
-                if (!messageBody) {
-                    const errorMessage = element.innerText
-                    element.replaceChildren(messageElement(errorMessage))
-                }
             }
         }
 
@@ -180,24 +167,6 @@
                 form.querySelector('#rememberMe').classList.add('form-check-input', 'mr-2')
 
                 form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
-
-                /*const createAccountSelector = form.querySelector('.create')
-                if (createAccountSelector) {
-                    const createAccountPrompt = createAccountSelector.children[0]
-                    if (createAccountPrompt) {
-                        const signUpLink = createAccountPrompt.childNodes[1]
-                        const promptDiv = document.createElement('div')
-                        promptDiv.id = "create-msg-div"
-                        promptDiv.innerText = "Don't have an account?"
-                        createAccountPrompt.innerText = ''
-                        createAccountPrompt.appendChild(promptDiv)
-                        if (signUpLink) {
-                            createAccountPrompt.appendChild(signUpLink)
-                            signUpLink.id = "create-link-a"
-                            signUpLink.classList.add('btn', 'btn-outline-success')
-                        }
-                    }
-                }*/
             }
             makeCopyrightText()
         }
