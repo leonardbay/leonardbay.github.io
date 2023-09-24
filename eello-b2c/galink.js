@@ -49,11 +49,11 @@ function styleErrorElement(element) {
 
     if (element) {
         element.classList.add('alert', 'alert-danger')
-        const messageBody = element.querySelector('div')
+        /*const messageBody = element.querySelector('div')
         if (!messageBody) {
             const errorMessage = element.innerText
             element.replaceChildren(messageElement(errorMessage))
-        }
+        }*/
     }
 }
 
