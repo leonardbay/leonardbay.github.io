@@ -14,24 +14,23 @@
     <section class="hero">
         <div class="jumbotron jumbotron-fluid">
             <div class="container" style="font-size: medium;">
-                <h1 class="display-4">Link eello and Google (1)</h1>
+                <h1 class="display-4">Link eello and Google</h1>
                 By signing in, you are authorizing Google to control your devices
             </div>
         </div>
     </section>
     <main id="GALink" class="container" role="main">
         <div class="row">
-            <div class="col"></div>
             <div class="col col-md-8">
                 <div id="api" data-name="Unified">
                     <div class="heading">
                         <h1 role="heading">Sign in</h1>
                     </div>
-                    <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount"
-                          aria-label="Sign in with your sign in name">
+                    <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount" style="margin-top: 20px;"
+                          aria-label="Sign in with your email and password">
                         <div class="intro">
-                            <h2 aria-level="1">
-                                Sign in with your sign in name
+                            <h2 aria-level="1" style="font-size: large;">
+                                Sign in with your email and password
                             </h2>
                         </div>
                         <div class="error pageLevel" aria-hidden="false" role="alert" style="display: block;">
@@ -69,7 +68,6 @@
                     </form>
                 </div>
             </div>
-            <div class="col"></div>
         </div>
     </main>
     <footer class="footer">
@@ -163,29 +161,7 @@
                 form.querySelector('#password').classList.add('form-control', 'my-2')
                 //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
-                //form.querySelector('.rememberMe').classList.add('form-check', 'form-switch', 'my-4')
-                //form.querySelector('label[for=rememberMe]').classList.add('form-check-label', 'mx-2', 'has-text-danger')
-                //form.querySelector('#rememberMe').classList.add('form-check-input', 'mr-2')
-
                 form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
-
-                /*const createAccountSelector = form.querySelector('.create')
-                if (createAccountSelector) {
-                    const createAccountPrompt = createAccountSelector.children[0]
-                    if (createAccountPrompt) {
-                        const signUpLink = createAccountPrompt.childNodes[1]
-                        const promptDiv = document.createElement('div')
-                        promptDiv.id = "create-msg-div"
-                        promptDiv.innerText = "Don't have an account?"
-                        createAccountPrompt.innerText = ''
-                        createAccountPrompt.appendChild(promptDiv)
-                        if (signUpLink) {
-                            createAccountPrompt.appendChild(signUpLink)
-                            signUpLink.id = "create-link-a"
-                            signUpLink.classList.add('btn', 'btn-outline-success')
-                        }
-                    }
-                }*/
             }
             makeCopyrightText()
         }
