@@ -58,7 +58,7 @@ function styleErrorElement(element) {
 }
 
 function stylePage() {
-    const localSignInDiv = document.querySelector('#LocalSignIn #api[data-name="Unified"]')
+    const localSignInDiv = document.querySelector('#GALink #api[data-name="Unified"]')
     if (localSignInDiv) {
         localSignInDiv.classList.add('card', 'p-5')
         localSignInDiv.querySelector('.intro').remove();
