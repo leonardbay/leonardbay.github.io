@@ -18,6 +18,7 @@ function makePwdToggler(pwd) {
 
     const label = document.createElement('label');
     label.setAttribute('for', id);
+    label.appendChild(document.createTextNode('Show Password'));
     label.classList.add('form-check-label', 'mx-2')
     div.appendChild(label);
 
@@ -60,35 +61,49 @@ function stylePage() {
     const localSignInDiv = document.querySelector('#GALink #api[data-name="Unified"]')
     if (localSignInDiv) {
         localSignInDiv.classList.add('card', 'p-5')
-        localSignInDiv.querySelector('.intro').remove();
-        const form = localSignInDiv.querySelector('form')
-        form.classList.add('is-flex', 'is-flex-direction-column')
-        form.childNodes.forEach((e) => {
-            if (e.nodeType === Node.ELEMENT_NODE) {
-                e.classList.add('m-2')
-            }
-        })
+        const intro = localSignInDiv.querySelector('.intro');
 
-        const errorDivs = localSignInDiv.querySelectorAll('.error')
-        errorDivs.forEach(errorDiv => {
-            styleErrorElement(errorDiv)
-        })
-
-        setupPwdTogglers();
-
-        form.querySelector('#signInName').classList.add('form-control', 'my-2')
-
-        form.querySelector('#password').classList.add('form-control', 'my-2')
-        //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
-
-        const nextElement = form.querySelector('#next');
-
-        if(nextElement) {
-            console.log("found nextElement");
-            nextElement.classList.add('btn', 'btn-dark', 'my-5')
+        if(intro) {
+            intro.remove();
         }
         else {
-            console.log("nextElement not found ");
+            console.log("intro not found");
+        }
+
+        const form = localSignInDiv.querySelector('form')
+
+        if(form) {
+            form.classList.add('is-flex', 'is-flex-direction-column')
+            form.childNodes.forEach((e) => {
+                if (e.nodeType === Node.ELEMENT_NODE) {
+                    e.classList.add('m-2')
+                }
+            })
+
+            const errorDivs = localSignInDiv.querySelectorAll('.error')
+            errorDivs.forEach(errorDiv => {
+                styleErrorElement(errorDiv)
+            })
+
+            setupPwdTogglers();
+
+            form.querySelector('#signInName').classList.add('form-control', 'my-2')
+
+            form.querySelector('#password').classList.add('form-control', 'my-2')
+            //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
+
+            const nextElement = form.querySelector('#next');
+
+            if(nextElement) {
+                console.log("found nextElement");
+                nextElement.classList.add('btn', 'btn-dark', 'my-5')
+            }
+            else {
+                console.log("nextElement not found ");
+            }
+        }
+        else {
+            console.log("form not found");
         }
     }
     makeCopyrightText()
@@ -114,5 +129,5 @@ if (document.readyState === 'loading') {
     }
 } else {
     stylePageAndShow();
-    setTimeout(()=> stylePageAndShow(), 1000);
+    setTimeout(()=> { stylePageAndShow(); }, 1000);
 }
