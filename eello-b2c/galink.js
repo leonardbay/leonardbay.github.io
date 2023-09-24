@@ -82,7 +82,15 @@ function stylePage() {
         form.querySelector('#password').classList.add('form-control', 'my-2')
         //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
-        form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
+        const nextElement = form.querySelector('#next');
+
+        if(nextElement) {
+            console.log("found nextElement");
+            nextElement.classList.add('btn', 'btn-dark', 'my-5')
+        }
+        else {
+            console.log("nextElement not found ");
+        }
     }
     makeCopyrightText()
 }
@@ -92,6 +100,7 @@ function showPage() {
 }
 
 function stylePageAndShow() {
+    console.log("style page and show");
     stylePage();
     showPage();
 }
