@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eello | Google</title>
+    <link rel="stylesheet" data-preload="true" href="https://cdn.eraniot.com/eello-b2c/styles.css" />
+    <!-- <link rel="stylesheet" data-preload="true" href="styles.css" /> -->
+</head>
+
+<body class="d-none">
+    <section class="hero">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Link eello and Google</h1>
+                By signing in, you are authorizing Google to control your devices
+            </div>
+        </div>
+    </section>
+    <main id="GALink" class="container" role="main">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-md-8">
+                <div id="api" data-name="Unified">
+                    <div class="heading">
+                        <h1 role="heading">Sign in</h1>
+                    </div>
+                    <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount"
+                          aria-label="Sign in with your sign in name">
+                        <div class="intro">
+                            <h2 aria-level="1">
+                                Sign in with your sign in name
+                            </h2>
+                        </div>
+                        <div class="error pageLevel" aria-hidden="false" role="alert" style="display: block;">
+                            <br />
+                            <p>Invalid sign in name or password.</p>
+                        </div>
+                        <div class="entry">
+                            <div class="entry-item">
+                                <label for="signInName">
+                                    Sign in name
+                                </label>
+                                <div class="error itemLevel" aria-hidden="true" role="alert" style="display: none;">
+                                    <p></p>
+                                </div>
+                                <input type="text" id="signInName" name="Sign in name"
+                                       title="Please enter a valid Sign in name" autofocus="" placeholder="Sign in name"
+                                       aria-label="Sign in name">
+                            </div>
+                            <div class="entry-item">
+                                <div class="password-label">
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="error itemLevel" aria-hidden="false" style="display: block;">
+                                    <br />
+                                    <p role="alert">Please enter your password</p>
+                                </div>
+                                <input type="password" id="password" name="Password" placeholder="Password"
+                                       aria-label="Password" autocomplete="current-password" aria-required="true">
+                            </div>
+                            <div class="working"></div>
+                            <div class="buttons">
+                                <button id="next" type="submit" form="localAccountForm">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted" id="copyright-text">
+                &copy; <strong>eello</strong> 2023. All rights reserved.
+            </span>
+        </div>
+    </footer>
+    <script>function makeCopyrightText() {
+            const year = new Date().getFullYear();
+            const copyrightText = document.getElementById("copyright-text");
+            if (copyrightText) {
+                copyrightText.innerHTML = `&copy; <strong>eello</strong> ${year}. All rights reserved.`
+            }
+        }
+
+        function makePwdToggler(pwd) {
+            const div = document.createElement('div');
+            div.classList.add('form-check', 'form-switch', 'my-4')
+
+            const checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            const id = pwd.id + 'toggler';
+            checkbox.setAttribute('id', id);
+            checkbox.classList.add('form-check-input', 'mr-2')
+            div.appendChild(checkbox);
+
+            const label = document.createElement('label');
+            label.setAttribute('for', id);
+            label.appendChild(document.createTextNode('Show Password'));
+            label.classList.add('form-check-label', 'mx-2')
+            div.appendChild(label);
+
+            pwd.insertAdjacentElement('afterend', div);
+
+            const toggle = () => {
+                pwd.type = pwd.type === 'password' ? 'text' : 'password';
+            }
+            checkbox.addEventListener('click', toggle)
+            checkbox.addEventListener('keydown', toggle)
+        }
+
+        function setupPwdTogglers() {
+            var pwdInputs = document.querySelectorAll('input[type=password]');
+            for (var i = 0; i < pwdInputs.length; i++) {
+                makePwdToggler(pwdInputs[i]);
+            }
+        }
+
+        function styleErrorElement(element) {
+
+            const messageElement = (message) => {
+                const body = document.createElement('div')
+                body.classList.add('message-body')
+                body.innerText = message
+                return body
+            }
+
+            if (element) {
+                element.classList.add('alert', 'alert-danger')
+                const messageBody = element.querySelector('div')
+                if (!messageBody) {
+                    const errorMessage = element.innerText
+                    element.replaceChildren(messageElement(errorMessage))
+                }
+            }
+        }
+
+        function stylePage() {
+            const localSignInDiv = document.querySelector('#LocalSignIn #api[data-name="Unified"]')
+            if (localSignInDiv) {
+                localSignInDiv.classList.add('card', 'p-5')
+                localSignInDiv.querySelector('.intro').remove();
+                const form = localSignInDiv.querySelector('form')
+                form.classList.add('is-flex', 'is-flex-direction-column')
+                form.childNodes.forEach((e) => {
+                    if (e.nodeType === Node.ELEMENT_NODE) {
+                        e.classList.add('m-2')
+                    }
+                })
+
+                const errorDivs = localSignInDiv.querySelectorAll('.error')
+                errorDivs.forEach(errorDiv => {
+                    styleErrorElement(errorDiv)
+                })
+
+                setupPwdTogglers();
+
+                form.querySelector('#signInName').classList.add('form-control', 'my-2')
+
+                form.querySelector('#password').classList.add('form-control', 'my-2')
+                form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
+
+                form.querySelector('.rememberMe').classList.add('form-check', 'form-switch', 'my-4')
+                form.querySelector('label[for=rememberMe]').classList.add('form-check-label', 'mx-2', 'has-text-danger')
+                form.querySelector('#rememberMe').classList.add('form-check-input', 'mr-2')
+
+                form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
+
+                const createAccountSelector = form.querySelector('.create')
+                if (createAccountSelector) {
+                    const createAccountPrompt = createAccountSelector.children[0]
+                    if (createAccountPrompt) {
+                        const signUpLink = createAccountPrompt.childNodes[1]
+                        const promptDiv = document.createElement('div')
+                        promptDiv.id = "create-msg-div"
+                        promptDiv.innerText = "Don't have an account?"
+                        createAccountPrompt.innerText = ''
+                        createAccountPrompt.appendChild(promptDiv)
+                        if (signUpLink) {
+                            createAccountPrompt.appendChild(signUpLink)
+                            signUpLink.id = "create-link-a"
+                            signUpLink.classList.add('btn', 'btn-outline-success')
+                        }
+                    }
+                }
+            }
+            makeCopyrightText()
+        }
+
+        function showPage() {
+            document.querySelector('body').classList.remove('d-none')
+        }
+
+        function stylePageAndShow() {
+            stylePage();
+            showPage();
+        }
+
+        if (document.readyState === 'loading') {
+            if (window.jQuery !== undefined) {
+                $(() => { stylePageAndShow(); });
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    stylePageAndShow();
+                });
+            }
+        } else {
+            stylePageAndShow();
+        }</script>
+</body>
+
+</html>

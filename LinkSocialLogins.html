@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eello | Link with External Account</title>
+    <link rel="stylesheet" data-preload="true" href="https://cdn.eraniot.com/eello-b2c/styles.css" />
+    <!-- <link rel="stylesheet" data-preload="true" href="styles.css" /> -->
+</head>
+<body class="is-flex is-flex-direction-column is-justify-content-space-between">
+    <section class="hero is-medium is-black">
+        <div class="hero-body">
+            <p class="title">Sign in to eello</p>
+            <p class="subtitle">Link your account with a third-party account provider</p>
+        </div>
+    </section>
+    <section id="LinkSocialLogins" class="section">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-three-fifths">
+                <div id="api" data-name="Unified">
+                    <div class="heading">
+                      <h1 role="heading">Sign in</h1>
+                    </div>
+                    <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount" aria-label="Sign in with your sign in name">
+                        <div class="intro">
+                          <h2 aria-level="1">
+                            Sign in with your sign in name
+                          </h2>
+                        </div>
+                        <div class="error pageLevel" aria-hidden="true" role="alert" style="display: none;">
+                          <p></p>
+                        </div>
+                        <div class="entry">
+                          <div class="entry-item">
+                            <label for="signInName">
+                              Sign in name
+                            </label>
+                            <div class="error itemLevel" aria-hidden="true" role="alert" style="display: none;">
+                              <p></p>
+                            </div>
+                            <input type="text" id="signInName" name="Sign in name" title="Please enter a valid Sign in name" autofocus="" placeholder="Sign in name" aria-label="Sign in name">
+                          </div>
+                            <div class="entry-item">
+                              <div class="password-label">
+                                <label for="password">Password</label>
+                                    <a id="forgotPassword" href="/eraniot.onmicrosoft.com/B2C_1A_EelloDev_LinkSocialLogins/api/CombinedSigninAndSignup/forgotPassword?csrf_token=K1ZnVmVVUzdsTVhldm1paE8xNXE1WkJVUFBBTTZNNkdMbzBTbjBsdzNEOGlPaEt0a1JPYVJITnFxN0JTVUNCL256L3I5aHQ0UStrNm1iTHFLKzJKcUE9PTsyMDIyLTA1LTAzVDA4OjQwOjU5LjQ5MTExM1o7WTZ5SkxHbjQwRDg2emY4M3lHUlFJdz09O3siT3JjaGVzdHJhdGlvblN0ZXAiOjF9&amp;tx=StateProperties=eyJUSUQiOiI0MTEyN2IyYy00Mjk2LTRiMzEtYmRkNS0xNzRmYTlmNDBiZDIifQ&amp;p=B2C_1A_EelloDev_LinkSocialLogins">Forgot your password?</a>
+                                              </div>
+                              <div class="error itemLevel" aria-hidden="true" style="display: none;">
+                                <p role="alert"></p>
+                              </div>
+                              <input type="password" id="password" name="Password" placeholder="Password" aria-label="Password" autocomplete="current-password" aria-required="true">
+                                          </div>
+                          <div class="working"></div>
+                              <div class="rememberMe">
+                                <input id="rememberMe" type="checkbox" name="rememberMe">
+                                <label for="rememberMe">Keep me signed in</label>
+                              </div>
+                          <div class="buttons">
+                            <button id="next" type="submit" form="localAccountForm">Sign in</button>
+                          </div>
+                        </div>
+                              <div class="divider">
+                                <h2>OR</h2>
+                              </div>
+                              <div class="create">
+                                <p>
+                                  Don't have an account?<a id="createAccount" href="/eraniot.onmicrosoft.com/B2C_1A_EelloDev_LinkSocialLogins/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=K1ZnVmVVUzdsTVhldm1paE8xNXE1WkJVUFBBTTZNNkdMbzBTbjBsdzNEOGlPaEt0a1JPYVJITnFxN0JTVUNCL256L3I5aHQ0UStrNm1iTHFLKzJKcUE9PTsyMDIyLTA1LTAzVDA4OjQwOjU5LjQ5MTExM1o7WTZ5SkxHbjQwRDg2emY4M3lHUlFJdz09O3siT3JjaGVzdHJhdGlvblN0ZXAiOjF9&amp;tx=StateProperties=eyJUSUQiOiI0MTEyN2IyYy00Mjk2LTRiMzEtYmRkNS0xNzRmYTlmNDBiZDIifQ&amp;p=B2C_1A_EelloDev_LinkSocialLogins">Sign up now</a>
+                                </p>
+                              </div>
+                      </form>
+                    <div class="claims-provider-list-buttons social" aria-label="Sign in with your social account" role="form">
+                        <div class="intro">
+                            <h2 aria-level="1">Sign in with your social account</h2>
+                        </div>
+                        <div class="options">
+                            <div>
+                                <button class="accountButton firstButton claims-provider-selection" id="GoogleExchange" role="link" autofocus="">Google</button>
+                            </div>
+                            <div>
+                                <button class="accountButton claims-provider-selection" id="AmazonExchange" role="link">Amazon</button>
+                            </div>
+                            <div>
+                                <button class="accountButton claims-provider-selection" id="AppleExchange" role="link">Sign in with Apple</button>
+                            </div>
+                            <div>
+                                <button class="accountButton claims-provider-selection" id="FacebookExchange" role="link">Facebook</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="context has-text-centered">
+            <p>
+                &copy; <strong>eello</strong> 2023. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js" ></script>
+    <script src="main.js"></script> -->
+    <script src="https://cdn.eraniot.com/eello-b2c/main.js" ></script>
+</body>
+</html>
