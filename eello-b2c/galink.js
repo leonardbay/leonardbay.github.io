@@ -18,7 +18,6 @@ function makePwdToggler(pwd) {
 
     const label = document.createElement('label');
     label.setAttribute('for', id);
-    label.appendChild(document.createTextNode('Show Password'));
     label.classList.add('form-check-label', 'mx-2')
     div.appendChild(label);
 
