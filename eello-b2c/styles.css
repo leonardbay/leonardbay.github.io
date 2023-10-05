@@ -78,7 +78,7 @@ footer {
 }
 
 .sendCode {
-    display: flex;
+    display: flex important!;
 }
 
 .helpLink {
