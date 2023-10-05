@@ -80,3 +80,13 @@ footer {
 .sendCode {
     display: flex;
 }
+
+.helpLink {
+    background: gray;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    font-size: smaller;
+    padding: 2px;
+    padding-top: 0px;
+    color: yellow;
+}
