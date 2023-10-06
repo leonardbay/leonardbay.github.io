@@ -90,3 +90,12 @@ footer {
     padding-top: 0px;
     color: yellow;
 }
+
+.editField {
+    max-width: 85%;
+    margin-right: 4px;
+}
+
+.attrEntryMargin {
+    margin-bottom: 10px;
+}
