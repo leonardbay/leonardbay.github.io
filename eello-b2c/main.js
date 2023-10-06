@@ -45,7 +45,6 @@ function styleSocialSignInPage() {
 
 function styleLinkSocialLoginPage() {
     const localSignInDiv = document.querySelector('#LinkSocialLogins #localAccountForm')
-    console.log(localSignInDiv)
     if (localSignInDiv) {
         localSignInDiv.classList.add('card', 'p-5')
         localSignInDiv.querySelector('.intro').remove();
