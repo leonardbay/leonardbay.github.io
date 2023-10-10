@@ -140,8 +140,8 @@ function styleErrorElement(element) {
         const messageBody = element.querySelector('div')
         if (!messageBody) {
             const errorMessage = element.innerText
-            //element.replaceChildren(messageElement(errorMessage))
-            element.replaceChildren(messageElement("??"))
+            element.replaceChildren(messageElement(errorMessage))
+            //element.replaceChildren(messageElement("??"))
         }
     }
 }
@@ -221,6 +221,10 @@ function styleLocalSignUpPage() {
         if (form) {
             form.querySelectorAll('input').forEach(e => e.classList.add('input'))
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'is-primary'))
+
+            form.querySelector('.a').forEach(e => {
+                e.innerHTML = "???"
+            })
 
             form.querySelector('.buttons').classList.add('columns')
             form.querySelectorAll('button').forEach(e => {
