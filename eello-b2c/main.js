@@ -140,7 +140,8 @@ function styleErrorElement(element) {
         const messageBody = element.querySelector('div')
         if (!messageBody) {
             const errorMessage = element.innerText
-            element.replaceChildren(messageElement(errorMessage))
+            //element.replaceChildren(messageElement(errorMessage))
+            element.replaceChildren(messageElement("??"))
         }
     }
 }
@@ -223,7 +224,7 @@ function styleLocalSignUpPage() {
 
             form.querySelector('.buttons').classList.add('columns')
             form.querySelectorAll('button').forEach(e => {
-                e.classList.add('column', 'm-5', 'p-3')
+                e.classList.add('column', 'm-5', 'p-3', 'displayFlexImportant')
             })
         }
     }
