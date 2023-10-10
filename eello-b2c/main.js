@@ -219,11 +219,14 @@ function styleLocalSignUpPage() {
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
-            form.querySelectorAll('input').forEach(e => e.classList.add('input'))
+            form.querySelectorAll('input').forEach(e => {
+                e.classList.add('input', 'editField')
+            })
+
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'is-primary'))
 
             form.querySelectorAll('a').forEach(e => {
-                e.innerHTML = "???"
+                e.innerHTML = "help?"
             })
 
             form.querySelector('.buttons').classList.add('columns')
