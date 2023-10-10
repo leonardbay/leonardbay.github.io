@@ -217,6 +217,12 @@ function styleLocalSignUpPage() {
         })
 
 
+        const redundantHelps = localSignUpDiv.querySelectorAll('#emailVerificationControl > .helpLin.tiny')
+        redundantHelps.forEach(redundantHelp => {
+            //styleErrorElement(errorDiv)
+            redundantHelp.display = "none";
+        })
+
         const form = localSignUpDiv.querySelector('form')
         if (form) {
             form.querySelectorAll('input').forEach(e => {
