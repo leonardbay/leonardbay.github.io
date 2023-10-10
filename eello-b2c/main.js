@@ -217,7 +217,7 @@ function styleLocalSignUpPage() {
         })
 
 
-        const redundantHelps = localSignUpDiv.querySelectorAll('#emailVerificationControl > .helpLin.tiny')
+        const redundantHelps = localSignUpDiv.querySelectorAll('#emailVerificationControl > .helpLink.tiny')
         redundantHelps.forEach(redundantHelp => {
             //styleErrorElement(errorDiv)
             redundantHelp.display = "none";
