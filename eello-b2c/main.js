@@ -216,11 +216,12 @@ function styleLocalSignUpPage() {
             styleErrorElement(errorDiv)
         })
 
-
+        const parent = document.getElementById('emailVerificationControl');
         const redundantHelps = localSignUpDiv.querySelectorAll('#emailVerificationControl > .helpLink.tiny')
         redundantHelps.forEach(redundantHelp => {
             //styleErrorElement(errorDiv)
-            redundantHelp.display = "none";
+            //redundantHelp.display = "none";
+            parent.removeChild(redundantHelp);
         })
 
         const form = localSignUpDiv.querySelector('form')
