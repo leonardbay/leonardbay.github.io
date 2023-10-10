@@ -222,7 +222,7 @@ function styleLocalSignUpPage() {
             form.querySelectorAll('input').forEach(e => e.classList.add('input'))
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'is-primary'))
 
-            form.querySelectorAll('.a').forEach(e => {
+            form.querySelectorAll('a').forEach(e => {
                 e.innerHTML = "???"
             })
 
