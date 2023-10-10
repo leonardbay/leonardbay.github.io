@@ -216,13 +216,11 @@ function styleLocalSignUpPage() {
             styleErrorElement(errorDiv)
         })
 
-        const parent = document.getElementById('emailVerificationControl');
-        const redundantHelps = localSignUpDiv.querySelectorAll('#emailVerificationControl > .helpLink.tiny')
-        redundantHelps.forEach(redundantHelp => {
-            //styleErrorElement(errorDiv)
-            //redundantHelp.display = "none";
-            parent.removeChild(redundantHelp);
-        })
+        const prevSibling = document.getElementById('emailVerificationControl');
+        const nextEl = prevSibling ? prevSibling.nextElementSibling || prevSibling.nextSibling : undefined;
+        if(nextEl) {
+            nextEl.parentElement.removeChild(nextEl);
+        }
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
