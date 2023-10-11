@@ -256,7 +256,7 @@ function styleLocalSignUpPage() {
 
             form.querySelector('.buttons').classList.add('columns')
             form.querySelectorAll('button').forEach(e => {
-                e.classList.add('column', 'm-5', 'p-3', 'displayFlexImportant')
+                e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat')
             })
         }
     }
