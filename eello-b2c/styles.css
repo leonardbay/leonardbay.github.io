@@ -82,13 +82,13 @@ footer {
 }
 
 .helpLink {
-    background: gray;
+    background: black;
     border: 1px solid darkgray;
     border-radius: 4px;
     font-size: smaller;
     padding: 2px;
     padding-top: 0px;
-    color: yellow;
+    color: white;
 }
 
 .editField {
