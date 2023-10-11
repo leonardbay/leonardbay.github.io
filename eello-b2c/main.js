@@ -233,8 +233,7 @@ function styleLocalSignUpPage() {
                 e.classList.add('input', 'editField')
             })
 
-            //form.querySelectorAll('button').forEach(e => e.classList.add('button', 'is-primary'))
-            form.querySelectorAll('button').forEach(e => e.classList.add('btn', 'btn-dark'))
+            form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
 
             form.querySelectorAll('a').forEach(e => {
                 e.innerHTML = "help?"
