@@ -101,3 +101,11 @@ footer {
 .attrEntryMargin {
     margin-bottom: 10px;
 }
+
+.iconHeading img {
+    margin-right:10px;
+}
+.iconHeading h1, .iconHeading img {
+    display:inline-block;
+    vertical-align:middle;
+}
