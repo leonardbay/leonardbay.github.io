@@ -222,13 +222,19 @@ function styleLocalSignUpPage() {
             nextEl.parentElement.removeChild(nextEl);
         }
 
+        /*const ulElement = document.getElementById('attributeList_ul')
+        if(ulElement) {
+            ulElement.
+        }*/
+
         const form = localSignUpDiv.querySelector('form')
         if (form) {
             form.querySelectorAll('input').forEach(e => {
                 e.classList.add('input', 'editField')
             })
 
-            form.querySelectorAll('button').forEach(e => e.classList.add('button', 'is-primary'))
+            //form.querySelectorAll('button').forEach(e => e.classList.add('button', 'is-primary'))
+            form.querySelectorAll('button').forEach(e => e.classList.add('btn', 'btn-dark'))
 
             form.querySelectorAll('a').forEach(e => {
                 e.innerHTML = "help?"
