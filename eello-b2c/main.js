@@ -222,6 +222,20 @@ function styleLocalSignUpPage() {
             nextEl.parentElement.removeChild(nextEl);
         }
 
+        const emailInput = document.getElementById('email')
+        if(emailInput) {
+            const parentDiv = emailInput.parentElement;
+            if(parentDiv) {
+                const parentLI = parentDiv.parentElement;
+                if(parentLI) {
+                    const parentUL = parentLI.parentElement;
+                    if(parentUL) {
+                        parentUL.style.paddingLeft = "0px";
+                    }
+                }
+            }
+        }
+
         /*const ulElement = document.getElementById('attributeList_ul')
         if(ulElement) {
             ulElement.
