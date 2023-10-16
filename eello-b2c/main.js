@@ -391,8 +391,9 @@ function styleLocalPasswordResetPage() {
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
 
             form.querySelectorAll('a').forEach(e => {
-                e.style.textDecoration = "none";
-                e.innerHTML = "help?"
+                //e.style.textDecoration = "none";
+                //e.innerHTML = "help?"
+                e.remove();
             })
 
             form.querySelector('.buttons').classList.add('columns')
