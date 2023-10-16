@@ -55,6 +55,39 @@ function styleRememberMe(form) {
     }
 }
 
+function styleCreateAccount(form) {
+    if (form) {
+
+        const createAccountLink = form.querySelector('#createAccount');
+        if(createAccountLink) {
+            createAccountLink.classList.add('btn', 'btn-dark', 'my-5')
+        }
+
+        /*const createAccountSelector = form.querySelector('.create')
+        if (createAccountSelector) {
+            const createAccountPrompt = createAccountSelector.children[0]
+            if (createAccountPrompt) {
+                let layoutClass = document.body.clientWidth > 640 ? 'is-flex-direction-row' : 'is-flex-direction-column'
+                createAccountPrompt.classList.add('is-flex', layoutClass, 'is-justify-content-center')
+
+                const signUpLink = createAccountPrompt.childNodes[1]
+
+                const promptDiv = document.createElement('div')
+                promptDiv.classList.add('mx-2', 'has-text-centered')
+                promptDiv.innerText = "Don't have an account?"
+
+
+                createAccountPrompt.innerHTML = ''
+                createAccountPrompt.appendChild(promptDiv)
+                if (signUpLink) {
+                    createAccountPrompt.appendChild(signUpLink)
+                    signUpLink.classList.add('has-text-centered', 'has-text-primary')
+                }
+            }
+        }*/
+    }
+}
+
 function styleLinkSocialLoginPage() {
     const localSignInDiv = document.querySelector('#LinkSocialLogins #localAccountForm')
     if (localSignInDiv) {
@@ -80,9 +113,6 @@ function styleLinkSocialLoginPage() {
         form.querySelector('#password').classList.add('input', 'my-2')
 
         styleRememberMe(form);
-        //form.querySelector('.rememberMe').classList.add('my-4')
-        //form.querySelector('#rememberMe').classList.add('mr-2')
-        //form.querySelector('label[for=rememberMe]').classList.add('mx-2', 'has-text-danger')
 
         form.querySelectorAll('button').forEach(e => {
             e.classList.add('button', 'is-flex-grow-1', 'is-primary', 'my-5')
@@ -90,30 +120,7 @@ function styleLinkSocialLoginPage() {
 
         form.querySelector('.divider').classList.add('has-text-centered');
 
-        const createAccountSelector = form.querySelector('.create')
-        if (createAccountSelector) {
-            const createAccountPrompt = createAccountSelector.children[0]
-            if (createAccountPrompt) {
-                let layoutClass = document.body.clientWidth > 640 ? 'is-flex-direction-row' : 'is-flex-direction-column'
-                createAccountPrompt.classList.add('is-flex', layoutClass, 'is-justify-content-center')
-
-                const signUpLink = createAccountPrompt.childNodes[1]
-
-                const promptDiv = document.createElement('div')
-                promptDiv.classList.add('mx-2', 'has-text-centered')
-                promptDiv.innerText = "Don't have an account?"
-
-
-                createAccountPrompt.innerHTML = ''
-                createAccountPrompt.appendChild(promptDiv)
-                if (signUpLink) {
-                    createAccountPrompt.appendChild(signUpLink)
-                    signUpLink.classList.add('has-text-centered', 'has-text-primary')
-                }
-            }
-
-
-        }
+        styleCreateAccount(form);
     }
     const unifiedSelectorDiv = document.querySelector('#LinkSocialLogins #api[data-name="Unified"]')
     if (unifiedSelectorDiv) {
@@ -155,7 +162,6 @@ function styleErrorElement(element) {
         if (!messageBody) {
             const errorMessage = element.innerText
             element.replaceChildren(messageElement(errorMessage))
-            //element.replaceChildren(messageElement("??"))
         }
     }
 }
@@ -190,34 +196,7 @@ function styleLocalSignInPage() {
 
         form.querySelector('.divider').classList.add('has-text-centered');
 
-        const createAccountLink = form.querySelector('#createAccount');
-        if(createAccountLink) {
-            createAccountLink.classList.add('btn', 'btn-dark', 'my-5')
-        }
-
-        /*const createAccountSelector = form.querySelector('.create')
-        if (createAccountSelector) {
-            const createAccountPrompt = createAccountSelector.children[0]
-            if (createAccountPrompt) {
-                // let layoutClass = document.body.clientWidth > 640 ? 'is-flex-direction-row' : 'is-flex-direction-column'
-                // createAccountPrompt.classList.add('is-flex', layoutClass, 'is-justify-content-center')
-
-                const signUpLink = createAccountPrompt.childNodes[1]
-
-                const promptDiv = document.createElement('div')
-                promptDiv.id = "create-msg-div"
-                promptDiv.innerText = "Don't have an account?"
-
-
-                createAccountPrompt.innerText = ''
-                createAccountPrompt.appendChild(promptDiv)
-                if (signUpLink) {
-                    createAccountPrompt.appendChild(signUpLink)
-                    signUpLink.id = "create-link-a"
-                    signUpLink.classList.add('btn', 'btn-outline-success')
-                }
-            }
-        }*/
+        styleCreateAccount(form);
     }
 }
 
@@ -251,11 +230,6 @@ function styleLocalSignUpPage() {
                 }
             }
         }
-
-        /*const ulElement = document.getElementById('attributeList_ul')
-        if(ulElement) {
-            ulElement.
-        }*/
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
