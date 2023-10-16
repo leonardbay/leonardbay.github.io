@@ -367,15 +367,32 @@ function styleLocalPasswordResetPage() {
 
             setupPwdTogglers();
 
-            form.querySelector('#signInName').classList.add('form-control', 'my-2')
+            //form.querySelector('#signInName').classList.add('form-control', 'my-2')
 
-            form.querySelector('#password').classList.add('form-control', 'my-2')
+            //form.querySelector('#password').classList.add('form-control', 'my-2')
 
             const nextElement = form.querySelector('#next');
 
             if(nextElement) {
                 nextElement.classList.add('btn', 'btn-dark', 'my-5')
             }
+
+            form.querySelectorAll('input').forEach(e => {
+                e.classList.add('input', 'editField')
+            })
+
+            form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
+
+            form.querySelectorAll('a').forEach(e => {
+                e.style.textDecoration = "none";
+                e.innerHTML = "help?"
+            })
+
+            form.querySelector('.buttons').classList.add('columns')
+            form.querySelectorAll('button').forEach(e => {
+                e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat')
+            })
+
         }
     }
 }
