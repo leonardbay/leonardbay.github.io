@@ -336,7 +336,6 @@ function styleGALinkPage() {
             }
         }
     }
-    makeCopyrightText()
 }
 
 function stylePages() {
