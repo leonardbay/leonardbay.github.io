@@ -1,5 +1,6 @@
 function showPage() {
     document.querySelector('body').classList.remove('is-invisible')
+    document.querySelector('body').classList.remove('d-none')
 }
 
 function makeCopyrightText() {
