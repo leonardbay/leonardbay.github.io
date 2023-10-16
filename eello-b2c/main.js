@@ -344,7 +344,7 @@ function styleGALinkPage() {
 }
 
 function styleLocalPasswordResetPage() {
-    const pageMainDiv = document.querySelector('#LocalPasswordReset #api[data-name="Unified"]')
+    const pageMainDiv = document.querySelector('#LocalPasswordReset')
     if(pageMainDiv) {
         removeIntoDiv(pageMainDiv);
 
@@ -381,10 +381,10 @@ function styleLocalPasswordResetPage() {
 }
 
 function stylePages() {
-    styleSocialSignInPage();
+    //styleSocialSignInPage();
     styleLocalSignInPage();
     styleLocalSignUpPage();
-    styleLinkSocialLoginPage();
+    //styleLinkSocialLoginPage();
     styleLocalPasswordResetPage();
     styleGALinkPage();
     makeCopyrightText();
