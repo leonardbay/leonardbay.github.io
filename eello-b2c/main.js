@@ -360,10 +360,8 @@ function styleLocalPasswordResetPage() {
                 }
             })
 
-            const errorDivs = pageMainDiv.querySelectorAll('.error')
-            errorDivs.forEach(errorDiv => {
-                styleErrorElement(errorDiv)
-            })
+            //const errorDivs = pageMainDiv.querySelectorAll('.error')
+            //errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) })
 
             setupPwdTogglers();
 
