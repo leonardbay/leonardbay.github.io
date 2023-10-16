@@ -253,6 +253,15 @@ function styleLocalSignInPage() {
     }
 }
 
+function removeEmailVerificationControlHelp() {
+    const prevSibling = document.getElementById('emailVerificationControl');
+    const nextEl = prevSibling ? prevSibling.nextElementSibling || prevSibling.nextSibling : undefined;
+    if(nextEl) {
+        nextEl.parentElement.removeChild(nextEl);
+    }
+
+}
+
 function styleLocalSignUpPage() {
     const localSignUpDiv = document.querySelector('#LocalSignUp #api[data-name="Unified"]')
     if (localSignUpDiv) {
@@ -264,11 +273,7 @@ function styleLocalSignUpPage() {
             styleErrorElement(errorDiv)
         })
 
-        const prevSibling = document.getElementById('emailVerificationControl');
-        const nextEl = prevSibling ? prevSibling.nextElementSibling || prevSibling.nextSibling : undefined;
-        if(nextEl) {
-            nextEl.parentElement.removeChild(nextEl);
-        }
+        removeEmailVerificationControlHelp();
 
         const emailInput = document.getElementById('email')
         if(emailInput) {
@@ -391,6 +396,7 @@ function styleLocalPasswordResetPage() {
                 e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat')
             })
 
+            removeEmailVerificationControlHelp();
         }
     }
 }
