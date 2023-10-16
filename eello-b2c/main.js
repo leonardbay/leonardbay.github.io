@@ -186,15 +186,16 @@ function styleLocalSignInPage() {
         form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
         styleRememberMe(form);
-        //form.querySelector('.rememberMe').classList.add('form-check', 'form-switch', 'my-4')
-        //form.querySelector('label[for=rememberMe]').classList.add('form-check-label', 'mx-2', 'has-text-danger')
-        //form.querySelector('#rememberMe').classList.add('form-check-input', 'mr-2')
-
         form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
 
         form.querySelector('.divider').classList.add('has-text-centered');
 
-        const createAccountSelector = form.querySelector('.create')
+        const createAccountLink = form.querySelector('#createAccount');
+        if(createAccountLink) {
+            createAccountLink.classList.add('btn', 'btn-dark', 'my-5')
+        }
+
+        /*const createAccountSelector = form.querySelector('.create')
         if (createAccountSelector) {
             const createAccountPrompt = createAccountSelector.children[0]
             if (createAccountPrompt) {
@@ -216,7 +217,7 @@ function styleLocalSignInPage() {
                     signUpLink.classList.add('btn', 'btn-outline-success')
                 }
             }
-        }
+        }*/
     }
 }
 
