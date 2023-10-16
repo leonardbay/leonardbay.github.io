@@ -43,6 +43,18 @@ function styleSocialSignInPage() {
     }
 }
 
+function styleRememberMe(form) {
+    if (form) {
+        let qs;
+        qs = form.querySelector('.rememberMe');
+        if (qs) { qs.classList.add('my-4'); }
+        qs = form.querySelector('#rememberMe');
+        if (qs) { qs.classList.add('mr-2'); }
+        qs = form.querySelector('label[for=rememberMe]');
+        if (qs) { qs.classList.add('mx-2', 'has-text-danger'); }
+    }
+}
+
 function styleLinkSocialLoginPage() {
     const localSignInDiv = document.querySelector('#LinkSocialLogins #localAccountForm')
     if (localSignInDiv) {
@@ -66,9 +78,11 @@ function styleLinkSocialLoginPage() {
         form.querySelector('label[for=password]').classList.add('d-none')
         form.querySelector('#forgotPassword').classList.add('is-pulled-right', 'button', 'is-inverted', 'is-rounded', 'is-small', 'is-danger', 'my-4')
         form.querySelector('#password').classList.add('input', 'my-2')
-        form.querySelector('.rememberMe').classList.add('my-4')
-        form.querySelector('#rememberMe').classList.add('mr-2')
-        form.querySelector('label[for=rememberMe]').classList.add('mx-2', 'has-text-danger')
+
+        styleRememberMe(form);
+        //form.querySelector('.rememberMe').classList.add('my-4')
+        //form.querySelector('#rememberMe').classList.add('mr-2')
+        //form.querySelector('label[for=rememberMe]').classList.add('mx-2', 'has-text-danger')
 
         form.querySelectorAll('button').forEach(e => {
             e.classList.add('button', 'is-flex-grow-1', 'is-primary', 'my-5')
@@ -171,9 +185,10 @@ function styleLocalSignInPage() {
         form.querySelector('#password').classList.add('form-control', 'my-2')
         form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
-        form.querySelector('.rememberMe').classList.add('form-check', 'form-switch', 'my-4')
-        form.querySelector('label[for=rememberMe]').classList.add('form-check-label', 'mx-2', 'has-text-danger')
-        form.querySelector('#rememberMe').classList.add('form-check-input', 'mr-2')
+        styleRememberMe(form);
+        //form.querySelector('.rememberMe').classList.add('form-check', 'form-switch', 'my-4')
+        //form.querySelector('label[for=rememberMe]').classList.add('form-check-label', 'mx-2', 'has-text-danger')
+        //form.querySelector('#rememberMe').classList.add('form-check-input', 'mr-2')
 
         form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
 
