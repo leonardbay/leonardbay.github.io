@@ -259,6 +259,22 @@ function removeEmailVerificationControlHelp() {
     if(nextEl) {
         nextEl.parentElement.removeChild(nextEl);
     }
+}
+
+function removeEmailAddressIndent() {
+    const emailInput = document.getElementById('email')
+    if(emailInput) {
+        const parentDiv = emailInput.parentElement;
+        if(parentDiv) {
+            const parentLI = parentDiv.parentElement;
+            if(parentLI) {
+                const parentUL = parentLI.parentElement;
+                if(parentUL) {
+                    parentUL.style.paddingLeft = "0px";
+                }
+            }
+        }
+    }
 
 }
 
@@ -275,19 +291,7 @@ function styleLocalSignUpPage() {
 
         removeEmailVerificationControlHelp();
 
-        const emailInput = document.getElementById('email')
-        if(emailInput) {
-            const parentDiv = emailInput.parentElement;
-            if(parentDiv) {
-                const parentLI = parentDiv.parentElement;
-                if(parentLI) {
-                    const parentUL = parentLI.parentElement;
-                    if(parentUL) {
-                        parentUL.style.paddingLeft = "0px";
-                    }
-                }
-            }
-        }
+        removeEmailAddressIndent();
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
@@ -397,6 +401,8 @@ function styleLocalPasswordResetPage() {
             })
 
             removeEmailVerificationControlHelp();
+
+            removeEmailAddressIndent();
         }
     }
 }
