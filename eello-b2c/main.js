@@ -11,6 +11,13 @@ function makeCopyrightText() {
     }
 }
 
+function removeIntoDiv(parentDiv) {
+    if(parentDiv) {
+        const intro = parentDiv.querySelector('.intro');
+        if(intro) { intro.remove(); }
+    }
+}
+
 function styleRememberMe(form) {
     if (form) {
         let qs;
@@ -299,16 +306,13 @@ function styleLocalSignUpPage() {
 }
 
 function styleGALinkPage() {
-    const localSignInDiv = document.querySelector('#GALink #api[data-name="Unified"]')
-    if (localSignInDiv) {
-        localSignInDiv.classList.add('card', 'p-5')
-        /*const intro = localSignInDiv.querySelector('.intro');
+    const pageMainDiv = document.querySelector('#GALink #api[data-name="Unified"]')
+    if (pageMainDiv) {
+        removeIntoDiv(pageMainDiv);
 
-        if(intro) {
-            intro.remove();
-        }*/
+        pageMainDiv.classList.add('card', 'p-5')
 
-        const form = localSignInDiv.querySelector('form')
+        const form = pageMainDiv.querySelector('form')
 
         if(form) {
             form.classList.add('is-flex', 'is-flex-direction-column')
@@ -318,7 +322,7 @@ function styleGALinkPage() {
                 }
             })
 
-            const errorDivs = localSignInDiv.querySelectorAll('.error')
+            const errorDivs = pageMainDiv.querySelectorAll('.error')
             errorDivs.forEach(errorDiv => {
                 styleErrorElement(errorDiv)
             })
@@ -339,11 +343,49 @@ function styleGALinkPage() {
     }
 }
 
+function styleLocalPasswordResetPage() {
+    const pageMainDiv = document.querySelector('#LocalPasswordReset #api[data-name="Unified"]')
+    if(pageMainDiv) {
+        removeIntoDiv(pageMainDiv);
+
+        pageMainDiv.classList.add('card', 'p-5')
+
+        const form = pageMainDiv.querySelector('form')
+
+        if(form) {
+            form.classList.add('is-flex', 'is-flex-direction-column')
+            form.childNodes.forEach((e) => {
+                if (e.nodeType === Node.ELEMENT_NODE) {
+                    e.classList.add('m-2')
+                }
+            })
+
+            const errorDivs = pageMainDiv.querySelectorAll('.error')
+            errorDivs.forEach(errorDiv => {
+                styleErrorElement(errorDiv)
+            })
+
+            setupPwdTogglers();
+
+            form.querySelector('#signInName').classList.add('form-control', 'my-2')
+
+            form.querySelector('#password').classList.add('form-control', 'my-2')
+
+            const nextElement = form.querySelector('#next');
+
+            if(nextElement) {
+                nextElement.classList.add('btn', 'btn-dark', 'my-5')
+            }
+        }
+    }
+}
+
 function stylePages() {
     styleSocialSignInPage();
     styleLocalSignInPage();
     styleLocalSignUpPage();
     styleLinkSocialLoginPage();
+    styleLocalPasswordResetPage();
     styleGALinkPage();
     makeCopyrightText();
     showPage();
