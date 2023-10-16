@@ -310,6 +310,14 @@ function setupPwdTogglers() {
     }
 }
 
+function makeCopyrightText() {
+    const copyrightText = document.getElementById("copyright-text");
+    if (copyrightText) {
+        const year = new Date().getFullYear();
+        copyrightText.innerHTML = `&copy; <strong>eello</strong> ${year}. All rights reserved.`
+    }
+}
+
 function showPage() {
     document.querySelector('body').classList.remove('is-invisible')
 }
@@ -319,6 +327,7 @@ function stylePages() {
     styleLocalSignInPage();
     styleLocalSignUpPage();
     styleLinkSocialLoginPage();
+    makeCopyrightText();
     showPage();
 }
 
