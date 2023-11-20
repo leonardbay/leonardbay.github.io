@@ -102,17 +102,18 @@ footer {
     margin-bottom: 10px;
 }
 
+.iconHeading {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .iconHeading img {
-    margin-right:10px;
-    max-width: 3vh;
-    max-height: 3vh;
+    max-width: 4vh;
+    max-height: 4vh;
 }
 
 .iconHeading h1 {
-    font-size: 3vh;
-}
-
-.iconHeading h1, .iconHeading img {
-    display:inline-block;
-    vertical-align:middle;
+    font-size: 5vh;
 }
