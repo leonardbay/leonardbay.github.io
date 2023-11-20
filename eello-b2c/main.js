@@ -39,7 +39,7 @@ function styleCreateAccount(form) {
 
         const createAccountLink = form.querySelector('#createAccount');
         if(createAccountLink) {
-            createAccountLink.classList.add('btn', 'btn-dark', 'my-5')
+            createAccountLink.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
         }
 
         /*const createAccountSelector = form.querySelector('.create')
@@ -195,7 +195,7 @@ function styleLinkSocialLoginPage() {
         styleRememberMe(form);
 
         form.querySelectorAll('button').forEach(e => {
-            e.classList.add('button', 'is-flex-grow-1', 'is-primary', 'my-5')
+            e.classList.add('button', 'is-flex-grow-1', 'is-primary'/*, 'my-5'*/)
         })
 
         form.querySelector('.divider').classList.add('has-text-centered');
@@ -253,7 +253,7 @@ function styleLocalSignInPage() {
         form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
         styleRememberMe(form);
-        form.querySelector('#next').classList.add('btn', 'btn-dark', 'my-5')
+        form.querySelector('#next').classList.add('btn', 'btn-dark'/*, 'my-5'*/)
 
         form.querySelector('.divider').classList.add('has-text-centered');
 
@@ -355,7 +355,7 @@ function styleGALinkPage() {
             const nextElement = form.querySelector('#next');
 
             if(nextElement) {
-                nextElement.classList.add('btn', 'btn-dark', 'my-5')
+                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
             }
         }
     }
@@ -390,7 +390,7 @@ function styleLocalPasswordResetPage() {
             const nextElement = form.querySelector('#next');
 
             if(nextElement) {
-                nextElement.classList.add('btn', 'btn-dark', 'my-5')
+                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
             }
 
             form.querySelectorAll('input').forEach(e => {
