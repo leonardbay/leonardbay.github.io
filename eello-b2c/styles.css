@@ -108,6 +108,10 @@ footer {
     max-height: 3vh;
 }
 
+.iconHeading h1 {
+    font-size: 3vh;
+}
+
 .iconHeading h1, .iconHeading img {
     display:inline-block;
     vertical-align:middle;
