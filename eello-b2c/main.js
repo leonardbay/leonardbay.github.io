@@ -87,6 +87,9 @@ function modifyActionButton(button, icon, text) {
 }
 
 function styleErrorElement(element) {
+    if(element) {
+        element.classList.add('errorStyle');
+    }
 /*
     const messageElement = (message) => {
         const body = document.createElement('div')

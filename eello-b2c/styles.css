@@ -121,3 +121,7 @@ footer {
 .mainDiv {
     padding: 1rem! important;
 }
+
+.errorStyle {
+    color: red;
+}
