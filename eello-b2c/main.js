@@ -30,6 +30,10 @@ function styleRememberMe(form) {
     }
 }
 
+function styleMainDiv(mainDiv) {
+    mainDiv.classList.add('card', 'p-5', 'mainDiv');
+}
+
 function styleCreateAccount(form) {
     if (form) {
 
@@ -83,7 +87,7 @@ function modifyActionButton(button, icon, text) {
 }
 
 function styleErrorElement(element) {
-
+/*
     const messageElement = (message) => {
         const body = document.createElement('div')
         body.classList.add('message-body')
@@ -99,6 +103,7 @@ function styleErrorElement(element) {
             element.replaceChildren(messageElement(errorMessage))
         }
     }
+*/    
 }
 
 function makePwdToggler(pwd) {
@@ -137,7 +142,7 @@ function setupPwdTogglers() {
 function styleSocialSignInPage() {
     const unifiedSelectorDiv = document.querySelector('#SocialSignIn #api[data-name="Unified"]')
     if (unifiedSelectorDiv) {
-        unifiedSelectorDiv.classList.add('card', 'p-5')
+        styleMainDiv(unifiedSelectorDiv);
         unifiedSelectorDiv.querySelector('.claims-provider-list-buttons > .options')
             .childNodes
             .forEach((e) => {
@@ -163,7 +168,7 @@ function styleSocialSignInPage() {
 function styleLinkSocialLoginPage() {
     const localSignInDiv = document.querySelector('#LinkSocialLogins #localAccountForm')
     if (localSignInDiv) {
-        localSignInDiv.classList.add('card', 'p-5')
+        styleMainDiv(localSignInDiv);
         localSignInDiv.querySelector('.intro').remove();
         const form = localSignInDiv
         form.classList.add('is-flex', 'is-flex-direction-column')
@@ -196,7 +201,7 @@ function styleLinkSocialLoginPage() {
     }
     const unifiedSelectorDiv = document.querySelector('#LinkSocialLogins #api[data-name="Unified"]')
     if (unifiedSelectorDiv) {
-        unifiedSelectorDiv.classList.add('card', 'p-5')
+        styleMainDiv(unifiedSelectorDiv);
         unifiedSelectorDiv.querySelector('.claims-provider-list-buttons > .options')
             .childNodes
             .forEach((e) => {
@@ -222,7 +227,7 @@ function styleLinkSocialLoginPage() {
 function styleLocalSignInPage() {
     const localSignInDiv = document.querySelector('#LocalSignIn #api[data-name="Unified"]')
     if (localSignInDiv) {
-        localSignInDiv.classList.add('card', 'p-5')
+        styleMainDiv(localSignInDiv);
         localSignInDiv.querySelector('.intro').remove();
         const form = localSignInDiv.querySelector('form')
         form.classList.add('is-flex', 'is-flex-direction-column')
@@ -281,7 +286,7 @@ function removeEmailAddressIndent() {
 function styleLocalSignUpPage() {
     const localSignUpDiv = document.querySelector('#LocalSignUp #api[data-name="Unified"]')
     if (localSignUpDiv) {
-        localSignUpDiv.classList.add('card', 'p-5')
+        styleMainDiv(localSignUpDiv);
         localSignUpDiv.querySelector('.intro').remove();
 
         const errorDivs = localSignUpDiv.querySelectorAll('#attributeVerification > .error.pageLevel')
@@ -320,7 +325,7 @@ function styleGALinkPage() {
     if (pageMainDiv) {
         removeIntoDiv(pageMainDiv);
 
-        pageMainDiv.classList.add('card', 'p-5')
+        styleMainDiv(pageMainDiv);
 
         const form = pageMainDiv.querySelector('form')
 
@@ -358,7 +363,7 @@ function styleLocalPasswordResetPage() {
     if(pageMainDiv) {
         removeIntoDiv(pageMainDiv);
 
-        pageMainDiv.classList.add('card', 'p-5')
+        styleMainDiv(pageMainDiv);
 
         const form = pageMainDiv.querySelector('form')
 

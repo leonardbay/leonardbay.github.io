@@ -117,3 +117,7 @@ footer {
 .iconHeading h1 {
     font-size: 5vh;
 }
+
+.mainDiv {
+    padding: 1rem! important;
+}
