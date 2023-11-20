@@ -104,8 +104,10 @@ footer {
 
 .iconHeading img {
     margin-right:10px;
-    height: 50px;
+    max-width: 3vh;
+    max-height: 3vh;
 }
+
 .iconHeading h1, .iconHeading img {
     display:inline-block;
     vertical-align:middle;
