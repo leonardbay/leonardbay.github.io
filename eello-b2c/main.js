@@ -67,6 +67,31 @@ function styleCreateAccount(form) {
     }
 }
 
+function removeEmailVerificationControlHelp() {
+    const prevSibling = document.getElementById('emailVerificationControl');
+    const nextEl = prevSibling ? prevSibling.nextElementSibling || prevSibling.nextSibling : undefined;
+    if(nextEl) {
+        nextEl.parentElement.removeChild(nextEl);
+    }
+}
+
+function removeEmailAddressIndent() {
+    const emailInput = document.getElementById('email')
+    if(emailInput) {
+        const parentDiv = emailInput.parentElement;
+        if(parentDiv) {
+            const parentLI = parentDiv.parentElement;
+            if(parentLI) {
+                const parentUL = parentLI.parentElement;
+                if(parentUL) {
+                    parentUL.style.paddingLeft = "0px";
+                }
+            }
+        }
+    }
+
+}
+
 function modifyActionButton(button, icon, text) {
     if (text === undefined) {
         text = button.innerText
@@ -232,58 +257,25 @@ function styleLocalSignInPage() {
     if (localSignInDiv) {
         styleMainDiv(localSignInDiv);
         localSignInDiv.querySelector('.intro').remove();
-        const form = localSignInDiv.querySelector('form')
-        form.classList.add('is-flex', 'is-flex-direction-column')
-        form.childNodes.forEach((e) => {
-            if (e.nodeType === Node.ELEMENT_NODE) {
-                e.classList.add('m-2')
-            }
-        })
 
-        const errorDivs = localSignInDiv.querySelectorAll('.error')
-        errorDivs.forEach(errorDiv => {
-            styleErrorElement(errorDiv)
-        })
-
-        setupPwdTogglers();
-
-        form.querySelector('#signInName').classList.add('form-control', 'my-2')
-
-        form.querySelector('#password').classList.add('form-control', 'my-2')
-        form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
-
-        styleRememberMe(form);
-        form.querySelector('#next').classList.add('btn', 'btn-dark'/*, 'my-5'*/)
-
-        form.querySelector('.divider').classList.add('has-text-centered');
-
-        styleCreateAccount(form);
-    }
-}
-
-function removeEmailVerificationControlHelp() {
-    const prevSibling = document.getElementById('emailVerificationControl');
-    const nextEl = prevSibling ? prevSibling.nextElementSibling || prevSibling.nextSibling : undefined;
-    if(nextEl) {
-        nextEl.parentElement.removeChild(nextEl);
-    }
-}
-
-function removeEmailAddressIndent() {
-    const emailInput = document.getElementById('email')
-    if(emailInput) {
-        const parentDiv = emailInput.parentElement;
-        if(parentDiv) {
-            const parentLI = parentDiv.parentElement;
-            if(parentLI) {
-                const parentUL = parentLI.parentElement;
-                if(parentUL) {
-                    parentUL.style.paddingLeft = "0px";
-                }
-            }
+        const form = localSignInDiv.querySelector('form');
+        if(form) {
+            form.classList.add('is-flex', 'is-flex-direction-column');
+            form.childNodes.forEach((e) => { if (e.nodeType === Node.ELEMENT_NODE) { e.classList.add('m-2'); } });
+            form.querySelector('#signInName').classList.add('form-control', 'my-2')
+            form.querySelector('#password').classList.add('form-control', 'my-2')
+            form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
+            styleRememberMe(form);
+            form.querySelector('#next').classList.add('btn', 'btn-dark'/*, 'my-5'*/)
+            form.querySelector('.divider').classList.add('has-text-centered');
+            styleCreateAccount(form);
+            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
         }
-    }
 
+        const errorDivs = localSignInDiv.querySelectorAll('.error');
+        errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv); });
+        setupPwdTogglers();
+    }
 }
 
 function styleLocalSignUpPage() {
@@ -292,35 +284,25 @@ function styleLocalSignUpPage() {
         styleMainDiv(localSignUpDiv);
         localSignUpDiv.querySelector('.intro').remove();
 
-        const errorDivs = localSignUpDiv.querySelectorAll('#attributeVerification > .error.pageLevel')
-        errorDivs.forEach(errorDiv => {
-            styleErrorElement(errorDiv)
-        })
-
         removeEmailVerificationControlHelp();
-
         removeEmailAddressIndent();
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
-            form.querySelectorAll('input').forEach(e => {
-                e.classList.add('input', 'editField')
-            })
-
+            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
-
             form.querySelectorAll('a').forEach(e => {
                 //e.style.textDecoration = "none";
                 //e.innerHTML = "help?"
                 e.remove();
             })
-
-            form.querySelector('.buttons').classList.add('columns')
-            form.querySelectorAll('button').forEach(e => {
-                e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat')
-            })
+            form.querySelector('.buttons').classList.add('columns');
+            form.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat') });
         }
     }
+
+    const errorDivs = localSignUpDiv.querySelectorAll('#attributeVerification > .error.pageLevel')
+    errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) });
 }
 
 function styleGALinkPage() {
