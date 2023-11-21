@@ -264,7 +264,7 @@ function styleLocalSignInPage() {
             form.childNodes.forEach((e) => { if (e.nodeType === Node.ELEMENT_NODE) { e.classList.add('m-2'); } });
             form.querySelector('#signInName').classList.add('form-control', 'my-2')
             form.querySelector('#password').classList.add('form-control', 'my-2')
-            form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
+            form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4', 'forgotPasswordButton')
             styleRememberMe(form);
             form.querySelector('#next').classList.add('btn', 'btn-dark'/*, 'my-5'*/)
             form.querySelector('.divider').classList.add('has-text-centered');
@@ -299,6 +299,7 @@ function styleLocalSignUpPage() {
             })
             form.querySelector('.buttons').classList.add('columns');
             form.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat') });
+            //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4', 'forgotPasswordButton')
         }
     }
 
