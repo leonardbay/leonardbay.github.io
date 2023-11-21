@@ -110,12 +110,11 @@ footer {
 }
 
 .iconHeading img {
-    max-width: 4vh;
-    max-height: 4vh;
+    width: 12%;
 }
 
 .iconHeading h1 {
-    font-size: 5vh;
+    width: 80%;
 }
 
 .mainDiv {
