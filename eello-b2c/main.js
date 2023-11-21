@@ -362,7 +362,7 @@ function styleGALinkPage() {
 }
 
 function styleLocalPasswordResetPage() {
-    const pageMainDiv = document.querySelector('#LocalPasswordReset')
+    const pageMainDiv = document.querySelector('#LocalPasswordReset #api[data-name="Unified"]')
     if(pageMainDiv) {
         removeIntoDiv(pageMainDiv);
 
@@ -378,8 +378,8 @@ function styleLocalPasswordResetPage() {
                 }
             })
 
-            //const errorDivs = pageMainDiv.querySelectorAll('.error')
-            //errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) })
+            const errorDivs = pageMainDiv.querySelectorAll('.error')
+            errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) })
 
             setupPwdTogglers();
 
