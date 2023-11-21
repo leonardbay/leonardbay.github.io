@@ -269,7 +269,7 @@ function styleLocalSignInPage() {
             form.querySelector('#next').classList.add('btn', 'btn-dark'/*, 'my-5'*/)
             form.querySelector('.divider').classList.add('has-text-centered');
             styleCreateAccount(form);
-            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField', 'form-control', 'my-2') });
+            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
         }
 
         const errorDivs = localSignInDiv.querySelectorAll('.error');
@@ -289,7 +289,8 @@ function styleLocalSignUpPage() {
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
-            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
+            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField', 'form-control', 'my-2') });
+            //form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
             form.querySelectorAll('a').forEach(e => {
                 //e.style.textDecoration = "none";
