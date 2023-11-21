@@ -214,7 +214,7 @@ function styleLinkSocialLoginPage() {
         form.querySelector('label[for=signInName]').classList.add('d-none')
         form.querySelector('#signInName').classList.add('input', 'my-2')
         form.querySelector('label[for=password]').classList.add('d-none')
-        form.querySelector('#forgotPassword').classList.add('is-pulled-right', 'button', 'is-inverted', 'is-rounded', 'is-small', 'is-danger', 'my-4')
+        form.querySelector('#forgotPassword').classList.add('is-pulled-right', 'button', 'is-inverted', 'is-rounded', 'is-small', 'is-danger', 'my-4', 'forgotPasswordButton')
         form.querySelector('#password').classList.add('input', 'my-2')
 
         styleRememberMe(form);
