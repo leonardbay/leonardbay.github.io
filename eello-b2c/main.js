@@ -269,7 +269,7 @@ function styleLocalSignInPage() {
             form.querySelector('#next').classList.add('btn', 'btn-dark'/*, 'my-5'*/)
             form.querySelector('.divider').classList.add('has-text-centered');
             styleCreateAccount(form);
-            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
+            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField', 'form-control', 'my-2') });
         }
 
         const errorDivs = localSignInDiv.querySelectorAll('.error');
