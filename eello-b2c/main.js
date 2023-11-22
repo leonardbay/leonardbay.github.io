@@ -301,10 +301,10 @@ function styleLocalSignUpPage() {
             form.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat') });
             //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4', 'forgotPasswordButton')
         }
-    }
 
-    const errorDivs = localSignUpDiv.querySelectorAll('#attributeVerification > .error.pageLevel')
-    errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) });
+        const errorDivs = localSignUpDiv.querySelectorAll('#attributeVerification > .error.pageLevel')
+        errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) });
+    }
 }
 
 function styleGALinkPage() {
