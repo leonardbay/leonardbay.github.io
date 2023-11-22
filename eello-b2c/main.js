@@ -306,7 +306,7 @@ function styleLocalSignUpPage() {
     }
 }
 
-function commonStlePageMainDiv(pageMainDiv) {
+function commonStlePageMainDiv(pageMainDiv, nextElementTitle) {
     if (pageMainDiv) {
         const form = pageMainDiv.querySelector('form')
         removeIntoDiv(pageMainDiv);
@@ -322,7 +322,12 @@ function commonStlePageMainDiv(pageMainDiv) {
             //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
             const nextElement = form.querySelector('#next');
-            if(nextElement) { nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/); }
+            if(nextElement) {
+                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/); 
+                if(nextElementTitle) {
+                    nextElement.innerHTML = nextElementTitle;
+                }
+            }
 
         }
         const errorDivs = pageMainDiv.querySelectorAll('.error');
@@ -336,7 +341,7 @@ function styleGALinkPage() {
 }
 
 function styleDeleteAccountPage() {
-    commonStlePageMainDiv(document.querySelector('#DeleteAccount #api[data-name="Unified"]'));
+    commonStlePageMainDiv(document.querySelector('#DeleteAccount #api[data-name="Unified"]'), "Sign in and delete account");
 }
 
 function styleLocalPasswordResetPage() {
