@@ -345,6 +345,44 @@ function styleGALinkPage() {
     }
 }
 
+function styleDeleteAccountPage() {
+    const pageMainDiv = document.querySelector('#DeleteAccount #api[data-name="Unified"]')
+    if (pageMainDiv) {
+        removeIntoDiv(pageMainDiv);
+
+        styleMainDiv(pageMainDiv);
+
+        const form = pageMainDiv.querySelector('form')
+
+        if(form) {
+            form.classList.add('is-flex', 'is-flex-direction-column')
+            form.childNodes.forEach((e) => {
+                if (e.nodeType === Node.ELEMENT_NODE) {
+                    e.classList.add('m-2')
+                }
+            })
+
+            const errorDivs = pageMainDiv.querySelectorAll('.error')
+            errorDivs.forEach(errorDiv => {
+                styleErrorElement(errorDiv)
+            })
+
+            setupPwdTogglers();
+
+            form.querySelector('#signInName').classList.add('form-control', 'my-2')
+
+            form.querySelector('#password').classList.add('form-control', 'my-2')
+            //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
+
+            const nextElement = form.querySelector('#next');
+
+            if(nextElement) {
+                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
+            }
+        }
+    }
+}
+
 function styleLocalPasswordResetPage() {
     const pageMainDiv = document.querySelector('#LocalPasswordReset #api[data-name="Unified"]')
     if(pageMainDiv) {
@@ -408,6 +446,7 @@ function stylePages() {
     //styleLinkSocialLoginPage();
     styleLocalPasswordResetPage();
     styleGALinkPage();
+    styleDeleteAccountPage();
     makeCopyrightText();
     showPage();
 }
