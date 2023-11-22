@@ -306,7 +306,7 @@ function styleLocalSignUpPage() {
     }
 }
 
-function commonStlePageMainDiv(mageMainDiv) {
+function commonStlePageMainDiv(pageMainDiv) {
     if (pageMainDiv) {
         const form = pageMainDiv.querySelector('form')
         removeIntoDiv(pageMainDiv);
