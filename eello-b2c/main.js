@@ -347,57 +347,33 @@ function styleDeleteAccountPage() {
 function styleLocalPasswordResetPage() {
     const pageMainDiv = document.querySelector('#LocalPasswordReset #api[data-name="Unified"]')
     if(pageMainDiv) {
-        removeIntoDiv(pageMainDiv);
-
-        styleMainDiv(pageMainDiv);
-
         const form = pageMainDiv.querySelector('form')
-
+        removeIntoDiv(pageMainDiv);
+        styleMainDiv(pageMainDiv);
         if(form) {
             form.classList.add('is-flex', 'is-flex-direction-column')
-            form.childNodes.forEach((e) => {
-                if (e.nodeType === Node.ELEMENT_NODE) {
-                    e.classList.add('m-2')
-                }
-            })
-
-            const errorDivs = pageMainDiv.querySelectorAll('.error')
-            errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) })
-
-            setupPwdTogglers();
-
-            //form.querySelector('#signInName').classList.add('form-control', 'my-2')
-
-            //form.querySelector('#password').classList.add('form-control', 'my-2')
+            form.childNodes.forEach((e) => { if (e.nodeType === Node.ELEMENT_NODE) { e.classList.add('m-2');  } });
 
             const nextElement = form.querySelector('#next');
+            if(nextElement) { nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/); }
 
-            if(nextElement) {
-                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
-            }
-
-            form.querySelectorAll('input').forEach(e => {
-                e.classList.add('input', 'editField')
-            })
+            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
 
             form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
-
-            form.querySelectorAll('a').forEach(e => {
-                //e.style.textDecoration = "none";
-                //e.innerHTML = "help?"
-                e.remove();
-            })
+            form.querySelectorAll('a').forEach(e => { e.remove(); });
 
             form.querySelector('.buttons').classList.add('columns')
-            form.querySelectorAll('button').forEach(e => {
-                e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat')
-            })
-
+            form.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat'); });
             removeEmailVerificationControlHelp();
-
             removeEmailAddressIndent();
         }
+        const errorDivs = pageMainDiv.querySelectorAll('.error')
+        errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) })
+        setupPwdTogglers();
     }
+}
+
+function styleCustomSelfAssertPage() {
 }
 
 function stylePages() {
@@ -408,6 +384,7 @@ function stylePages() {
     styleLocalPasswordResetPage();
     styleGALinkPage();
     styleDeleteAccountPage();
+    styleCustomSelfAssertPage();
     makeCopyrightText();
     showPage();
 }
