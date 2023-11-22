@@ -278,6 +278,13 @@ function styleLocalSignInPage() {
     }
 }
 
+function styleFormInputsAndButtons(form) {
+    form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField', 'form-control', 'my-2') });
+    form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
+    form.querySelector('.buttons').classList.add('columns');
+    form.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat') });
+}
+
 function styleLocalSignUpPage() {
     const localSignUpDiv = document.querySelector('#LocalSignUp #api[data-name="Unified"]')
     if (localSignUpDiv) {
@@ -289,16 +296,8 @@ function styleLocalSignUpPage() {
 
         const form = localSignUpDiv.querySelector('form')
         if (form) {
-            form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField', 'form-control', 'my-2') });
-            //form.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
-            form.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
-            form.querySelectorAll('a').forEach(e => {
-                //e.style.textDecoration = "none";
-                //e.innerHTML = "help?"
-                e.remove();
-            })
-            form.querySelector('.buttons').classList.add('columns');
-            form.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat') });
+            styleFormInputsAndButtons(form);
+            form.querySelectorAll('a').forEach(e => { e.remove(); });
             //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4', 'forgotPasswordButton')
         }
 
@@ -307,80 +306,37 @@ function styleLocalSignUpPage() {
     }
 }
 
-function styleGALinkPage() {
-    const pageMainDiv = document.querySelector('#GALink #api[data-name="Unified"]')
+function commonStlePageMainDiv(mageMainDiv) {
     if (pageMainDiv) {
-        removeIntoDiv(pageMainDiv);
-
-        styleMainDiv(pageMainDiv);
-
         const form = pageMainDiv.querySelector('form')
-
+        removeIntoDiv(pageMainDiv);
+        styleMainDiv(pageMainDiv);
         if(form) {
-            form.classList.add('is-flex', 'is-flex-direction-column')
-            form.childNodes.forEach((e) => {
-                if (e.nodeType === Node.ELEMENT_NODE) {
-                    e.classList.add('m-2')
-                }
-            })
+            form.classList.add('is-flex', 'is-flex-direction-column');
+            form.childNodes.forEach((e) => { if (e.nodeType === Node.ELEMENT_NODE) { e.classList.add('m-2') } });
 
-            const errorDivs = pageMainDiv.querySelectorAll('.error')
-            errorDivs.forEach(errorDiv => {
-                styleErrorElement(errorDiv)
-            })
-
-            setupPwdTogglers();
+            styleFormInputsAndButtons(form);
 
             form.querySelector('#signInName').classList.add('form-control', 'my-2')
-
             form.querySelector('#password').classList.add('form-control', 'my-2')
             //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
 
             const nextElement = form.querySelector('#next');
+            if(nextElement) { nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/); }
 
-            if(nextElement) {
-                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
-            }
         }
+        const errorDivs = pageMainDiv.querySelectorAll('.error');
+        errorDivs.forEach(errorDiv => { styleErrorElement(errorDiv) });
+        setupPwdTogglers();
     }
 }
 
+function styleGALinkPage() {
+    commonStlePageMainDiv(document.querySelector('#GALink #api[data-name="Unified"]'));
+}
+
 function styleDeleteAccountPage() {
-    const pageMainDiv = document.querySelector('#DeleteAccount #api[data-name="Unified"]')
-    if (pageMainDiv) {
-        removeIntoDiv(pageMainDiv);
-
-        styleMainDiv(pageMainDiv);
-
-        const form = pageMainDiv.querySelector('form')
-
-        if(form) {
-            form.classList.add('is-flex', 'is-flex-direction-column')
-            form.childNodes.forEach((e) => {
-                if (e.nodeType === Node.ELEMENT_NODE) {
-                    e.classList.add('m-2')
-                }
-            })
-
-            const errorDivs = pageMainDiv.querySelectorAll('.error')
-            errorDivs.forEach(errorDiv => {
-                styleErrorElement(errorDiv)
-            })
-
-            setupPwdTogglers();
-
-            form.querySelector('#signInName').classList.add('form-control', 'my-2')
-
-            form.querySelector('#password').classList.add('form-control', 'my-2')
-            //form.querySelector('#forgotPassword').classList.add('btn', 'btn-outline-danger', 'my-4')
-
-            const nextElement = form.querySelector('#next');
-
-            if(nextElement) {
-                nextElement.classList.add('btn', 'btn-dark'/*, 'my-5'*/)
-            }
-        }
-    }
+    commonStlePageMainDiv(document.querySelector('#DeleteAccount #api[data-name="Unified"]'));
 }
 
 function styleLocalPasswordResetPage() {
