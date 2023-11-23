@@ -374,6 +374,13 @@ function styleLocalPasswordResetPage() {
 }
 
 function styleCustomSelfAssertPage() {
+    const pageMainDiv = document.querySelector('#CustomSelfAssertedId #api')
+    if(pageMainDiv) {
+        pageMainDiv.querySelectorAll('input').forEach(e => { e.classList.add('input', 'editField') });
+        pageMainDiv.querySelectorAll('button').forEach(e => e.classList.add('button', 'btn', 'btn-dark'))
+        pageMainDiv.querySelector('.buttons').classList.add('columns')
+        pageMainDiv.querySelectorAll('button').forEach(e => { e.classList.add('column', 'm-5', 'p-3', 'buttonExtraFormat'); });
+    }
 }
 
 function stylePages() {
