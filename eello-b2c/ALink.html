@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eello | Alexa</title>
+    <link rel="stylesheet" data-preload="true" href="https://leonardbay.github.io/eello-b2c/styles.css" />
+    <link rel="icon" href="https://leonardbay.github.io/eello-b2c/favicon.ico" type="image/x-icon" />     
+</head>
+
+<body class="d-none">
+    <section class="hero">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container" style="font-size: medium;">
+                <div class="iconHeading">
+                    <img src="https://leonardbay.github.io/eello-b2c/eello_icon.png" />
+                    <h1 class="display-4">Link eello and Alexa</h1>
+                </div>
+                <div style="margin-top: 10px">
+                    By signing in, you are authorizing Alexa to control your devices
+                </div>
+            </div>
+        </div>
+    </section>
+    <main id="ALink" class="container" role="main">
+        <div class="row">
+            <div class="col col-md-8">
+                <div id="api" data-name="Unified">
+                    <div class="heading">
+                        <h1 role="heading">Sign in</h1>
+                    </div>
+                    <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount" style="margin-top: 20px;"
+                          aria-label="Sign in with your email and password">
+                        <div class="intro">
+                            <h2 aria-level="1" style="font-size: large;">
+                                Sign in with your sign in name and password
+                            </h2>
+                        </div>
+                        <div class="error pageLevel" aria-hidden="false" role="alert" style="display: block;">
+                            <br />
+                            <p>Invalid sign in name or password.</p>
+                        </div>
+                        <div class="entry">
+                            <div class="entry-item">
+                                <label for="signInName">
+                                    Sign in name
+                                </label>
+                                <div class="error itemLevel" aria-hidden="true" role="alert" style="display: none;">
+                                    <p></p>
+                                </div>
+                                <input type="text" id="signInName" name="Sign in name"
+                                       title="Please enter a valid Sign in name" autofocus="" placeholder="Sign in name"
+                                       aria-label="Sign in name">
+                            </div>
+                            <div class="entry-item">
+                                <div class="password-label">
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="error itemLevel" aria-hidden="false" style="display: block;">
+                                    <br />
+                                    <p role="alert">Please enter your password</p>
+                                </div>
+                                <input type="password" id="password" name="Password" placeholder="Password"
+                                       aria-label="Password" autocomplete="current-password" aria-required="true">
+                            </div>
+                            <div class="working"></div>
+                            <div class="buttons">
+                                <button id="next" type="submit" form="localAccountForm">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted" id="copyright-text">
+                &copy; <strong>eello</strong> 2023; All rights reserved.
+            </span>
+        </div>
+    </footer>
+    <script src="https://leonardbay.github.io/eello-b2c/main.js" defer></script>
+</body>
+
+</html>

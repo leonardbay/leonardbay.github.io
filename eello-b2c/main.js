@@ -340,6 +340,10 @@ function styleGALinkPage() {
     commonStlePageMainDiv(document.querySelector('#GALink #api[data-name="Unified"]'));
 }
 
+function styleALinkPage() {
+    commonStlePageMainDiv(document.querySelector('#ALink #api[data-name="Unified"]'));
+}
+
 function styleDeleteAccountPage() {
     commonStlePageMainDiv(document.querySelector('#DeleteAccount #api[data-name="Unified"]'), "Sign in and delete account");
 }
@@ -390,6 +394,7 @@ function stylePages() {
     //styleLinkSocialLoginPage();
     styleLocalPasswordResetPage();
     styleGALinkPage();
+    styleALinkPage();
     styleDeleteAccountPage();
     styleCustomSelfAssertPage();
     makeCopyrightText();
